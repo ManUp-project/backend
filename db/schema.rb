@@ -10,25 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_28_223928) do
+ActiveRecord::Schema.define(version: 2022_12_30_185011) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "total"
   end
 
-  create_table "customers", force: :cascade do |t|
+  create_table "customer_types", force: :cascade do |t|
     t.string "customer_type"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "image_address"
-    t.integer "price"
+    t.float "price"
     t.integer "quantity"
     t.integer "cart_id"
     t.integer "customer_id"
     t.integer "sport_id"
     t.integer "wetsuit_id"
+    t.integer "customer_type_id"
     t.index ["cart_id"], name: "index_products_on_cart_id"
     t.index ["customer_id"], name: "index_products_on_customer_id"
     t.index ["sport_id"], name: "index_products_on_sport_id"
@@ -47,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_12_28_223928) do
 
   create_table "wetsuits", force: :cascade do |t|
     t.boolean "is_wetsuit"
-    t.string "type"
+    t.string "category"
   end
 
 end
