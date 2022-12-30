@@ -9,6 +9,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.belongs_to :customer
       t.belongs_to :sport
       t.belongs_to :wetsuit
+      t.belongs_to :customer_type
     end
   end
 end

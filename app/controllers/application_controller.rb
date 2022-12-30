@@ -65,14 +65,14 @@ class ApplicationController < Sinatra::Base
 
   post "/products/:id/reviews" do
     review = Review.create(
-      text: params[:text],
+      rating: params[:rating],
     )
   end
 
   patch "/products/:id/reviews" do
     review = Review.find(params[:id])
     review.update(
-      text: params[:text],
+      rating: params[:rating],
     )
     review.to_json
   end
