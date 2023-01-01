@@ -1,3 +1,5 @@
+
+
 CustomerType.destroy_all
 Customer.destroy_all
 Wetsuit.destroy_all
@@ -24,7 +26,7 @@ Not_a_suit = Wetsuit.create(is_wetsuit: false, category: "other")
 
 P1 = Product.create(name: "Apex Flow Men's Triathalon Suit", image_address: "https://www.orca.com/uploads/products/large/mn11tt42-01-orca-apex-flow-men-triathlon-wetsuit-silver-total_750x1000_750x1000.jpg", price: 975.00, quantity: 100, customer_type: Men, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P2 = Product.create(name: "RS1 Thermal WetSuit", image_address: "https://www.orca.com/uploads/products/large/ln6ttt01-01-orca-openwater-rs1-thermal-women-wetsuit-black_750x1000.jpg", price: 469.00, quantity: 50, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+P2 = Product.create(name: "RS1 Thermal WetSuit Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln6ttt01-01-orca-openwater-rs1-thermal-women-wetsuit-black_750x1000.jpg", price: 469.00, quantity: 50, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
 
 P3 = Product.create(name: "Aesir Thermal Swimrun Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn71tt01-01-orca-aesir-thermal-women-swimrun-wetsuit-black_750x1000.jpg", price: 499.00, quantity: 10, customer_type: Women, sport: Swimrun, wetsuit: Triathalon_suit)
 
@@ -64,19 +66,39 @@ P20 = Product.create(name: "Tango 4:3 Men Surf Wetsuit", image_address: "https:/
 
 P21 = Product.create(name: "Tango 3:2 Men Surf Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mna2tt01-01-orca-tango-3-2-men-surf-wetsuit-black_750x1000.jpg", price: 349.00, quantity: 68, customer_type: Men, sport: Surf, wetsuit: Surf_suit)
 
-P22 = Product.create(name: "", image_address: "", price: 169.00, quantity: , customer_type: , sport: , wetsuit: )
+P22 = Product.create(name: "Apex Flow Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn51tt42-01-orca-apex-flow-women-triathlon-wetsuit-silver-total_750x1000.jpg", price: 975.00, quantity: 5, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P23 = Product.create(name: "", image_address: "", price: 169.00, quantity: , customer_type: , sport: , wetsuit: )
+P23 = Product.create(name: "Apex Flex Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn52tt43-01-orca-apex-flex-women-triathlon-wetsuit-blue-flex_750x1000_750x1000.jpg", price: 719.00, quantity: 55, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P24 = Product.create(name: "", image_address: "", price: 169.00, quantity: , customer_type: , sport: , wetsuit: )
+P24 = Product.create(name: "Apex Float Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn53tt44-01-orca-apex-float-women-triathlon-wetsuit-red-buoyancy_750x1000.jpg", price: 619.00, quantity: 55, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P25 = Product.create(name: "", image_address: "", price: 169.00, quantity: , customer_type: , sport: , wetsuit: )
+P25 = Product.create(name: "Athlex Flow Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn54tt42-01-orca-athlex-flow-women-triathlon-wetsuit-silver-total_750x1000.jpg", price: 519.00, quantity: 39, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P26 = Product.create(name: "", image_address: "", price: 169.00, quantity: , customer_type: , sport: , wetsuit: )
+P26 = Product.create(name: "Athlex Flex Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn55tt43-01-orca-athlex-flex-women-triathlon-wetsuit-blue-flex_750x1000.jpg", price: 399.00, quantity: 66, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P27 = Product.create(name: "", image_address: "", price: 169.00, quantity: , customer_type: , sport: , wetsuit: )
+P27 = Product.create(name: "Athlex Float Women triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn56tt44-01-orca-athlex-float-women-triathlon-wetsuit-red-buoyancy_750x1000_750x1000.jpg", price: 299.00, quantity:29 , customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P28 = Product.create(name: "", image_address: "", price: 169.00, quantity: , customer_type: , sport: , wetsuit: )
+P28 = Product.create(name: "Openwater RS1 SW Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/kn60tt01-01-orca-openwater-rs1-sw-women-wetsuit-black_750x1000.jpg", price: 419.00, quantity: 77, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P29 = Product.create(name: "Openwater Perfrom Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln6ftt01-01-orca-openwater-perform-women-wetsuit-black_750x1000.jpg", price: 399.00, quantity: 57, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P30 = Product.create(name: "Openwater RS1 Sleeveless Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln61tt01-01-orca-openwater-rs1-sleeveless-women-wetsuit-black_750x1000.jpg", price: 259.00, quantity: 71, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P31 = Product.create(name: "Openwater Core TRN Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln68tt01-01-orca-openwater-core-trn-women-wetsuit-black_750x1000.jpg", price: 249.00, quantity: 35, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P32 = Product.create(name: "Openwater RS1 Top Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln62tt01-01-orca-openwater-rs1-top-women-wetsuit-black_750x1000.jpg", price: 249.00, quantity: 55, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P33 = Product.create(name: "Openwater RS1 Bottom Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln63tt01-01-orca-openwater-rs1-bottom-women-wetsuit-black_750x1000.jpg", price: 219.00, quantity: 44, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P34 = Product.create(name: "Openwater Core Hi-Vis Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln67tt01-01-orca-openwater-core-hi-vis-women-wetsuit-black_750x1000.jpg", price: 209.00, quantity: 34, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P35 = Product.create(name: "Openwater Core Swimskin Women Wetsuit", image_address: "https://www.orca.com/uploads/products/large/ln6stt01-01-orca-openwater-core-swimskin-women-wetsuit-black_750x1000.jpg", price: 139.00, quantity: 34, customer_type: Women, sport: Openwater, wetsuit: Openwater_suit)
+
+P36 = Product.create(name: "Tango 4:3 Women Surf Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mnb1tt01-01-orca-tango-4-3-women-surf-wetsuit-black_750x1000.jpg", price: 399.00, quantity: 77, customer_type: Women, sport: Surf, wetsuit: Surf_suit)
+
+P37 = Product.create(name: "Tango 3:2 Women Surf Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mnb2tt01-01-orca-tango-3-2-women-surf-wetsuit-black_750x1000.jpg", price: 349.00, quantity: 99, customer_type: Women, sport: Surf, wetsuit: Surf_suit)
+
+# P35 = Product.create(name: "", image_address: "", price: , quantity: , customer_type: , sport:, wetsuit: )
 
 C1 = Customer.create(name: "David")
 C2 = Customer.create(name: "Mark")
@@ -90,3 +112,4 @@ R5 = Review.create(rating: 2, customer_id: C2, product_id: P5)
 R6 = Review.create(rating: 5, customer_id: C3, product_id: P5)
 R7 = Review.create(rating: 5, customer_id: C3, product_id: P4)
 R8 = Review.create(rating: 4, customer_id: C3, product_id: P2)
+
