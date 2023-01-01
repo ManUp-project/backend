@@ -1,3 +1,5 @@
+
+
 CustomerType.destroy_all
 Customer.destroy_all
 Wetsuit.destroy_all
@@ -68,7 +70,7 @@ P22 = Product.create(name: "Apex Flow Women Triathlon Wetsuit", image_address: "
 
 P23 = Product.create(name: "Apex Flex Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn52tt43-01-orca-apex-flex-women-triathlon-wetsuit-blue-flex_750x1000_750x1000.jpg", price: 719.00, quantity: 55, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
-P24 = Product.create(name: "Apex Float Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn53tt44-01-orca-apex-float-women-triathlon-wetsuit-red-buoyancy_750x1000.jpg", price: 619.00, quantity: , customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
+P24 = Product.create(name: "Apex Float Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn53tt44-01-orca-apex-float-women-triathlon-wetsuit-red-buoyancy_750x1000.jpg", price: 619.00, quantity: 55, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
 P25 = Product.create(name: "Athlex Flow Women Triathlon Wetsuit", image_address: "https://www.orca.com/uploads/products/large/mn54tt42-01-orca-athlex-flow-women-triathlon-wetsuit-silver-total_750x1000.jpg", price: 519.00, quantity: 39, customer_type: Women, sport: Triathalon, wetsuit: Triathalon_suit)
 
@@ -110,3 +112,4 @@ R5 = Review.create(rating: 2, customer_id: C2, product_id: P5)
 R6 = Review.create(rating: 5, customer_id: C3, product_id: P5)
 R7 = Review.create(rating: 5, customer_id: C3, product_id: P4)
 R8 = Review.create(rating: 4, customer_id: C3, product_id: P2)
+
