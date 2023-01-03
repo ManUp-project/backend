@@ -10,6 +10,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.text :brief_description
       t.text :description
       t.float :price
+      t.integer :quantity
       t.belongs_to :customer_type
     end
   end

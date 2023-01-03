@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_184743) do
     t.text "brief_description"
     t.text "description"
     t.float "price"
+    t.integer "quantity"
     t.integer "customer_type_id"
     t.index ["customer_type_id"], name: "index_products_on_customer_type_id"
     t.index ["product_category_id"], name: "index_products_on_product_category_id"
