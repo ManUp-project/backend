@@ -11,8 +11,8 @@ class ApplicationController < Sinatra::Base
     product.to_json
   end
 
-  get "/sports/:sport" do
-    products = Product.where(sport: params[:sport])
+  get "/product_category/:product_category" do
+    products = Product.where(product_category: params[:product_category])
     products.to_json
   end
 
@@ -21,39 +21,36 @@ class ApplicationController < Sinatra::Base
     products.to_json
   end
 
-  get "/wetsuit/:type" do
-    products = Product.wetsuits.where(type: params[:type])
-    products.to_json
-  end
-
   get "/cart" do
-    cart = Cart.all
+    cart = CartDetail.all
     cart.to_json
   end
 
   post "/cart" do
-    cart = Cart.create(
-      total: Cart.cart_total,
+    cart = CartDetail.create(
+      product: params[:product],
+      cart_detail: params[:cart_detail]
     )
     cart.to_json
   end
 
   patch "/cart" do
-    cart = Cart.products.find(params[:id])
+    cart = CartDetail.products.find(params[:id])
     cart.update(
-      total: Cart.cart_total,
+      product: params[:product],
+      cart_detail: params[:cart_detail]
     )
     cart.to_json
   end
 
   delete "/cart" do
-    cart = Cart.all
+    cart = CartDetail.all
     cart.destroy
     cart.to_json
   end
 
   delete "/cart" do
-    product = Cart.products.find(params[:id])
+    product = CartDetail.products.find(params[:id])
     product.destroy
     product.to_json
   end
@@ -65,14 +62,14 @@ class ApplicationController < Sinatra::Base
 
   post "/products/:id/reviews" do
     review = Review.create(
-      rating: params[:rating],
+      review: params[:review],
     )
   end
 
   patch "/products/:id/reviews" do
     review = Review.find(params[:id])
     review.update(
-      rating: params[:rating],
+      review: params[:review],
     )
     review.to_json
   end
