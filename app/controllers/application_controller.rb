@@ -8,7 +8,9 @@ class ApplicationController < Sinatra::Base
 
   get "/products/:id" do
     product = Product.find(params[:id])
-    product.to_json
+    product_hash = product.serializable_hash
+    product_hash[:average_review] = product.average_review
+    product_hash.to_json
   end
 
   get "/product_category/:product_category" do
@@ -61,9 +63,11 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/products/:id/reviews" do
-    review = Review.create(
-      review: params[:review],
-    )
+    product = Product.find(params[:id])
+    review = product.reviews.create(params[:review])
+    product_hash = product.serializable_hash
+    product_hash[:average_review] = product.average_review
+    {review: review, product: product_hash}.to_json
   end
 
   patch "/products/:id/reviews" do

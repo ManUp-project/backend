@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2023_01_03_184743) do
 
   create_table "cart_details", force: :cascade do |t|
     t.integer "user_id"
-    t.float "total"
     t.index ["user_id"], name: "index_cart_details_on_user_id"
   end
 
@@ -48,7 +47,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_184743) do
     t.text "brief_description"
     t.text "description"
     t.float "price"
-    t.integer "quantity"
+    t.integer "stock"
     t.integer "customer_type_id"
     t.index ["customer_type_id"], name: "index_products_on_customer_type_id"
     t.index ["product_category_id"], name: "index_products_on_product_category_id"
