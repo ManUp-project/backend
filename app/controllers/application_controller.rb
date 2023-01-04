@@ -13,6 +13,11 @@ class ApplicationController < Sinatra::Base
     product_hash.to_json
   end
 
+  get "/product_category" do 
+    product_category = ProductCategory.where("active == true")
+    product_category.to_json
+  end
+
   get "/product_category/:product_category" do
     products = Product.where(product_category: params[:product_category])
     products.to_json
