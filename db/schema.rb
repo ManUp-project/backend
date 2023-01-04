@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_184743) do
   create_table "product_categories", force: :cascade do |t|
     t.string "category_name"
     t.string "category_description"
+    t.string "category_image"
     t.boolean "active"
   end
 
