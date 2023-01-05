@@ -28,21 +28,21 @@ class ApplicationController < Sinatra::Base
     products.to_json
   end
 
-  get "/cart" do
-    cart = CartDetail.all
+  get "/cart_items" do
+    cart = CartItem.all
     cart.to_json
   end
 
-  post "/cart" do
-    cart = CartDetail.create(
+  post "/cart_items" do
+    cart = CartItem.create(
       product: params[:product],
       cart_detail: params[:cart_detail]
     )
     cart.to_json
   end
 
-  patch "/cart" do
-    cart = CartDetail.products.find(params[:id])
+  patch "/cart_items" do
+    cart = CartItem.products.find(params[:id])
     cart.update(
       product: params[:product],
       cart_detail: params[:cart_detail]
@@ -50,13 +50,44 @@ class ApplicationController < Sinatra::Base
     cart.to_json
   end
 
-  delete "/cart" do
+  delete "/cart_items" do
+    product = CartItem.products.find(params[:id])
+    product.destroy
+    product.to_json
+  end
+
+  get "/cart_detail/:id" do
+    cart = CartDetail.find(params[:id])
+    cart_hash = CartDetail.serializable_hash
+    cart_hash[:total] = CartDetail.sum
+    cart.to_json
+  end
+
+  post "/cart_detail/:id" do
+    cart = CartDetail.create(
+      cart_item: params[:product],
+      cart_detail: params[:cart_detail]
+    )
+    cart.to_json
+  end
+
+  patch "/cart-detail/:id" do
+    cart = CartDetail.cart_items.find(params[:id])
+    cart.update(
+      cart_item: params[:cart_item],
+      cart_detail: params[:cart_detail]
+    )
+    cart.remove_stock
+    cart.to_json
+  end
+
+  delete "/cart_detail/:id" do
     cart = CartDetail.all
     cart.destroy
     cart.to_json
   end
 
-  delete "/cart" do
+  delete "/cart_detail/:id" do
     product = CartDetail.products.find(params[:id])
     product.destroy
     product.to_json
