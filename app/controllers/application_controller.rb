@@ -39,19 +39,18 @@ class ApplicationController < Sinatra::Base
     cart.to_json
   end
 
-  patch "/cart_items" do
-    cart = CartItem.products.find(params[:id])
+  patch "/cart_items/:id" do
+    cart = CartItem.find(params[:id])
     cart.update(
-      product: params[:product],
-      cart_detail: params[:cart_detail]
+      quantity: params[:quantity]
     )
     cart.to_json
   end
 
-  delete "/cart_items" do
-    product = CartItem.products.find(params[:id])
+  delete "/cart_items/:id" do
+    product = CartItem.find(params[:id])
     product.destroy
-    product.to_json
+    return product.to_json
   end
 
   get "/cart_detail/:id" do
