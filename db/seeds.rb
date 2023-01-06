@@ -40,6 +40,6 @@ end
 detail = CartDetail.create(user_id: 1)
 detail2= CartDetail.create(user_id: 2)
 
-cart = CartItem.create(product_id: 1, cart_detail: detail, quantity: 2, size: "m")
-cart2 = CartItem.create(product_id: 3, cart_detail: detail, quantity: 1, size: "s")
-cart3 = CartItem.create(product_id: 3, cart_detail: detail2, quantity: 1, size: "s")
+cart = CartItem.create(product_id: 1, cart_detail: detail, quantity: 2, size: "Medium")
+cart2 = CartItem.create(product_id: 3, cart_detail: detail, quantity: 1, size: "Small")
+cart3 = CartItem.create(product_id: 3, cart_detail: detail2, quantity: 1, size: "Small")
