@@ -1,8 +1,5 @@
 class Review < ActiveRecord::Base
-  has_many :products
-  has_many :customers
+  belongs_to :product
+  belongs_to :user
 
-  def review_average
-    Review.average(:rating).round(2)
-  end
 end

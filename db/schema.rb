@@ -10,44 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_28_223928) do
+ActiveRecord::Schema.define(version: 2023_01_03_184743) do
 
-  create_table "carts", force: :cascade do |t|
-    t.integer "total"
+  create_table "cart_details", force: :cascade do |t|
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_cart_details_on_user_id"
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "customer_type"
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "cart_detail_id"
+    t.integer "quantity"
+    t.string "size"
+    t.index ["cart_detail_id"], name: "index_cart_items_on_cart_detail_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
+  end
+
+  create_table "customer_types", force: :cascade do |t|
+    t.string "category_name"
+    t.string "category_description"
+  end
+
+  create_table "product_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.string "category_description"
+    t.string "category_image"
+    t.boolean "active"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.string "image_address"
-    t.integer "price"
-    t.integer "quantity"
-    t.integer "cart_id"
-    t.integer "customer_id"
-    t.integer "sport_id"
-    t.integer "wetsuit_id"
-    t.index ["cart_id"], name: "index_products_on_cart_id"
-    t.index ["customer_id"], name: "index_products_on_customer_id"
-    t.index ["sport_id"], name: "index_products_on_sport_id"
-    t.index ["wetsuit_id"], name: "index_products_on_wetsuit_id"
+    t.integer "product_category_id"
+    t.string "image_address_front"
+    t.string "image_address_back"
+    t.string "image_address_insideout_front"
+    t.string "image_address_insideout_back"
+    t.text "brief_description"
+    t.text "description"
+    t.float "price"
+    t.integer "stock"
+    t.integer "customer_type_id"
+    t.index ["customer_type_id"], name: "index_products_on_customer_type_id"
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
-    t.integer "customer_id"
     t.integer "product_id"
+    t.integer "user_id"
+    t.integer "review"
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "sports", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "wetsuits", force: :cascade do |t|
-    t.boolean "is_wetsuit"
-    t.string "type"
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.integer "zip"
+    t.integer "phone_number"
   end
 
 end
