@@ -57,9 +57,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/cart_detail/:id" do
-    cart = CartDetail.find(params[:id])
-    cart_hash = CartDetail.serializable_hash
-    cart_hash[:total] = CartDetail.sum
+    cart = CartItem.where(cart_detail_id: params[:id])
     cart.to_json
   end
 
