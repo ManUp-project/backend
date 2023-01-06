@@ -26,6 +26,11 @@ class ApplicationController < Sinatra::Base
     products.to_json
   end
 
+  get "/customer_type/:customer_type_id/product_category/:product_category_id" do
+    products = Product.where(customer_type_id: params[:customer_type_id], product_category_id: params[:product_category_id])
+    products.to_json
+  end
+
   get "/cart_items" do
     cart = CartItem.all
     cart.to_json
@@ -33,8 +38,10 @@ class ApplicationController < Sinatra::Base
 
   post "/cart_items" do
     cart = CartItem.create(
-      product: params[:product],
-      cart_detail: params[:cart_detail]
+      product_id: params[:product_id],
+      cart_detail_id: params[:cart_detail_id],
+      quantity: params[:quantity],
+      size: params[:size]
     )
     cart.to_json
   end
